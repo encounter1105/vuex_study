@@ -5,15 +5,19 @@
         <!--方式1-->
         <!--<h3>{{$store.state.count}}-{{count}}</h3>  -->
         <p>
-            <button @click="$store.commit('add')">add</button>
-            <button @click="$store.commit('reduce')">reduce</button>
+            <button @click="$store.commit('add',10)">add</button>
+            <!--<button @click="$store.commit('reduce')">reduce</button>-->
+            <button @click="reduce">reduce</button>
+            <!--<button @click="addAction">addA</button>-->
+            <!--<button @click="reduceAction">reduceA</button>-->
+
         </p>
     </div>
 </template>
 
 <script>
     import store from '@/store/index.js'
-    import {mapState} from 'vuex'
+    import { mapState ,mapMutations, mapGetters, mapActions} from 'vuex'
     export default {
         name: "Count",
         data(){
@@ -32,7 +36,16 @@
         //     count:state => state.count
         // }),
         // 3. 通过 mapState数组来赋值
-        computed: mapState(["count"]),
+        // computed:  mapState(["count"]),
+        computed : {
+            ...mapState(['count']),
+            // count(){
+            //     return this.$store.getters.count;
+            // }
+            ...mapGetters(['count']),
+            ...mapActions(['addAction','reduceAction'])
+        },
+        methods: mapMutations(['add','reduce']),
         store
     }
 </script>
