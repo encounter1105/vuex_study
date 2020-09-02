@@ -21,7 +21,7 @@ Vue.use(Vuex)
 //     actions: {
 //         addAction(context){
 //             context.commit('add',10);
-//             setTimeout(()=>{context.commit('reduce')},5000);
+//             // setTimeout(()=>{context.commit('reduce')},5000);
 //             console.log('我比reduce先执行了');
 //         },
 //         reduceAction({commit}){
@@ -29,13 +29,12 @@ Vue.use(Vuex)
 //         }
 //     }
 // })
-//
-//
+
 // export default store
 
-//modules 模块组
+// modules 模块组
 const test1 = {
-    // namespaced: true,
+    namespaced: true,
     state: {
         name: 'moduleA',
         type: 'module A'
@@ -58,7 +57,7 @@ const test1 = {
 }
 const test2 = {
     // 当namespaced=true 时， vuex, 将会自动给各自module 添加访问路径名。 方便区分moduel
-    // namespaced: true,
+    namespaced: true,
     state:{
         name: 'moduleB',
         type: 'module B'
