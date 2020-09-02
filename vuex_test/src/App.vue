@@ -1,16 +1,18 @@
 <template>
   <div id="app">
-    <count></count>
+    <!--<count></count>-->
+    <test></test>
   </div>
 </template>
 
 <script>
 import count  from './components/count.vue'
+import test  from './components/Test.vue'
 
 export default {
   name: 'App',
   components: {
-    count
+    count, test
   }
 }
 </script>

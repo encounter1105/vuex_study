@@ -4,6 +4,8 @@
         <h3>{{$store.state.count}}</h3>
         <!--方式1-->
         <!--<h3>{{$store.state.count}}-{{count}}</h3>  -->
+        <!--在模板中使用-->
+        <h3>{{$store.state.a.count}}-{{count}}</h3>
         <p>
             <button @click="$store.commit('add',10)">add</button>
             <!--<button @click="$store.commit('reduce')">reduce</button>-->
